@@ -23,6 +23,6 @@ jobs:
         type: string
     executor: awscli
     steps:
-      - hello-triggerer:
+      - sync:
           bucket: <<parameters.bucket>>
           namespace: <<parameters.namespace>>
