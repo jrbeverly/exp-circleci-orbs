@@ -10,5 +10,5 @@ usage:
     "Deploy to S3":
         jobs:
           - exp-circleci-orbs/deploy-to-s3:
-            bucket: "hello-bucket"
-            namespace: "some/terraform"
+              bucket: "hello-bucket"
+              namespace: "some/terraform"
