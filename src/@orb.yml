@@ -1,0 +1,26 @@
+version: 2.1
+
+description: |
+  Experimenting with CircleCI Orbs, potentially for standard deployments.
+  Some extra text goes here, with a multi-line description.
+
+executors:
+  default:
+    docker:
+      - image: ubuntu:latest
+  awscli:
+    docker:
+      - image: cardboardci/awscli:latest
+
+jobs:
+  deploy-to-s3:
+    parameters:
+      bucket:
+        type: string
+      namespace:
+        type: string
+    executor: awscli
+    steps:
+      - name: "Show some of the CircleCI runtime env vars"
+        command: |
+          echo "aws sync s3://<<parameters.bucket>>/<<parameters.namespace>>/default.zip"

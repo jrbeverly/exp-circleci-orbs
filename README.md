@@ -1,2 +1,3 @@
-# exp-circleci-orbs
-Experimenting with CircleCI Orbs for running types of workflows
+# Experimenting with CircleCI Orbs
+
+Experimenting with CircleCI Orbs for reducing code re-use in templates

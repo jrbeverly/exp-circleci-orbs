@@ -1,0 +1,14 @@
+description: |
+  Deploy to S3
+usage:
+  version: 2.1
+
+  orbs:
+    hello-build: jrbeverly/exp-circleci-orbs@0.0.1
+
+  workflows:
+    "Deploy to S3":
+        jobs:
+          - exp-circleci-orbs/deploy-to-s3:
+            bucket: "hello-bucket"
+            namespace: "some/terraform"
