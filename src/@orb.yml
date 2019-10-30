@@ -16,11 +16,13 @@ jobs:
   deploy-to-s3:
     parameters:
       bucket:
+        description: 'The name of the s3 bucket'
         type: string
       namespace:
+        description: 'The namespace of the file'
         type: string
     executor: awscli
     steps:
-      - name: "Show some of the CircleCI runtime env vars"
-        command: |
-          echo "aws sync s3://<<parameters.bucket>>/<<parameters.namespace>>/default.zip"
+      - hello-triggerer:
+          bucket: <<parameters.bucket>>
+          namespace: <<parameters.namespace>>

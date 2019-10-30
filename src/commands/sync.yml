@@ -1,0 +1,13 @@
+parameters:
+  to:
+    type: string
+    default: "${CIRCLE_USERNAME}"
+  to:
+    type: string
+    default: "${CIRCLE_USERNAME}"
+steps:
+  - run:
+      name: "Emit the command we will run"
+      command: |
+        echo "aws sync s3://<<parameters.bucket>>/<<parameters.namespace>>/default.zip"
+        
