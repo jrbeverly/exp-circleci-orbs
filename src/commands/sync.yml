@@ -1,8 +1,8 @@
 parameters:
-  to:
+  bucket:
     type: string
     default: "${CIRCLE_USERNAME}"
-  to:
+  namespace:
     type: string
     default: "${CIRCLE_USERNAME}"
 steps:
