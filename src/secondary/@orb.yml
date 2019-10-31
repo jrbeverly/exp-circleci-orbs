@@ -1,8 +1,7 @@
 version: 2.1
 
 description: |
-  Experimenting with CircleCI Orbs, potentially for standard deployments.
-  Some extra text goes here, with a multi-line description.
+  A secondary usage for experimenting with multi-repo.
 
 executors:
   default:

@@ -1,0 +1,16 @@
+parameters:
+  bucket:
+    type: string
+    default: "${CIRCLE_USERNAME}"
+  namespace:
+    type: string
+    default: "${CIRCLE_USERNAME}"
+  source:
+    type: string
+    default: "${CIRCLE_USERNAME}"
+steps:
+  - run:
+      name: "Emit the command we will run"
+      command: |
+        echo "aws cp <<parameters.source>> s3://<<parameters.bucket>>/<<parameters.namespace>>/default.zip"
+        
