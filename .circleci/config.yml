@@ -4,17 +4,17 @@ orbs:
   orb-tools: circleci/orb-tools@2
 
 workflows:
-  primary:
+  sync:
     jobs:
       - orb-tools/pack:
-          source-dir: src/primary/
+          source-dir: src/sync/
           destination-orb-path: packed/orb.yml
           workspace-path: packed/orb.yml
           artifact-path: packed/orb.yml
 
       - orb-tools/publish:
           orb-path: packed/orb.yml
-          orb-ref: "jrbeverly/exp-primary@dev:${CIRCLE_BRANCH}"
+          orb-ref: "jrbeverly/aws-sync@dev:${CIRCLE_BRANCH}"
           publish-token-variable: "$CIRCLECI_API_TOKEN"
           attach-workspace: true
           checkout: false
@@ -22,7 +22,7 @@ workflows:
 
       - orb-tools/increment:
           orb-path: packed/orb.yml
-          orb-ref: "jrbeverly/exp-primary"
+          orb-ref: "jrbeverly/aws-sync"
           segment: "patch"
           publish-token-variable: "$CIRCLECI_API_TOKEN"
           attach-workspace: true
@@ -31,17 +31,17 @@ workflows:
           filters:
             branches:
               only: master
-  secondary:
+  cp:
     jobs:
       - orb-tools/pack:
-          source-dir: src/secondary/
+          source-dir: src/cp/
           destination-orb-path: packed/orb.yml
           workspace-path: packed/orb.yml
           artifact-path: packed/orb.yml
 
       - orb-tools/publish:
           orb-path: packed/orb.yml
-          orb-ref: "jrbeverly/exp-secondary@dev:${CIRCLE_BRANCH}"
+          orb-ref: "jrbeverly/aws-cp@dev:${CIRCLE_BRANCH}"
           publish-token-variable: "$CIRCLECI_API_TOKEN"
           attach-workspace: true
           checkout: false
@@ -49,7 +49,7 @@ workflows:
 
       - orb-tools/increment:
           orb-path: packed/orb.yml
-          orb-ref: "jrbeverly/exp-secondary"
+          orb-ref: "jrbeverly/aws-cp"
           segment: "patch"
           publish-token-variable: "$CIRCLECI_API_TOKEN"
           attach-workspace: true
