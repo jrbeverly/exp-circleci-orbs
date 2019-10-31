@@ -12,3 +12,4 @@ usage:
           - awscli/aws-copy-to:
               bucket: "hello-bucket"
               namespace: "some/terraform"
+              source: "some/path"

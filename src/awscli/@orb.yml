@@ -20,11 +20,15 @@ jobs:
       namespace:
         description: 'The namespace of the file'
         type: string
+      source:
+        description: 'The path of the file'
+        type: string
     executor: awscli
     steps:
       - cp:
           bucket: <<parameters.bucket>>
           namespace: <<parameters.namespace>>
+          source: <<parameters.source>>
   aws-sync-to:
     parameters:
       bucket:
@@ -33,12 +37,8 @@ jobs:
       namespace:
         description: 'The namespace of the file'
         type: string
-      source:
-        description: 'The path of the file'
-        type: string
     executor: awscli
     steps:
       - sync:
           bucket: <<parameters.bucket>>
           namespace: <<parameters.namespace>>
-          source: <<parameters.source>>

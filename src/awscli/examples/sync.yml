@@ -12,4 +12,3 @@ usage:
           - awscli/aws-sync-to:
               bucket: "hello-bucket"
               namespace: "some/terraform"
-              source: "some/path"
