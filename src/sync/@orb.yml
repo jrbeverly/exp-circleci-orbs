@@ -1,7 +1,7 @@
 version: 2.1
 
 description: |
-  A secondary usage for experimenting with multi-repo.
+  Syncs directories and S3 prefixes. Recursively copies new and updated files from the source directory to the destination. 
 
 executors:
   default:
@@ -12,7 +12,7 @@ executors:
       - image: cardboardci/awscli:latest
 
 jobs:
-  deploy-to-s3:
+  aws-sync:
     parameters:
       bucket:
         description: 'The name of the s3 bucket'

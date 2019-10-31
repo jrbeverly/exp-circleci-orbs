@@ -1,0 +1,15 @@
+description: |
+  Deploy to S3
+usage:
+  version: 2.1
+
+  orbs:
+    awscli: jrbeverly/awscli@0.0.5
+
+  workflows:
+    "Deploy to S3":
+        jobs:
+          - awscli/aws-sync-to:
+              bucket: "hello-bucket"
+              namespace: "some/terraform"
+              source: "some/path"

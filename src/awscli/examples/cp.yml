@@ -4,11 +4,11 @@ usage:
   version: 2.1
 
   orbs:
-    hello-build: jrbeverly/exp-circleci-orbs@0.0.1
+    awscli: jrbeverly/awscli@0.0.5
 
   workflows:
     "Deploy to S3":
         jobs:
-          - exp-circleci-orbs/deploy-to-s3:
+          - awscli/aws-copy-to:
               bucket: "hello-bucket"
               namespace: "some/terraform"

@@ -1,0 +1,44 @@
+version: 2.1
+
+description: |
+  A simple CircleCI experiment with awscli
+
+executors:
+  default:
+    docker:
+      - image: ubuntu:latest
+  awscli:
+    docker:
+      - image: cardboardci/awscli:latest
+
+jobs:
+  aws-copy-to:
+    parameters:
+      bucket:
+        description: 'The name of the s3 bucket'
+        type: string
+      namespace:
+        description: 'The namespace of the file'
+        type: string
+    executor: awscli
+    steps:
+      - cp:
+          bucket: <<parameters.bucket>>
+          namespace: <<parameters.namespace>>
+  aws-sync-to:
+    parameters:
+      bucket:
+        description: 'The name of the s3 bucket'
+        type: string
+      namespace:
+        description: 'The namespace of the file'
+        type: string
+      source:
+        description: 'The path of the file'
+        type: string
+    executor: awscli
+    steps:
+      - sync:
+          bucket: <<parameters.bucket>>
+          namespace: <<parameters.namespace>>
+          source: <<parameters.source>>
