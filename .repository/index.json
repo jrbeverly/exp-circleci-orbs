@@ -1,0 +1,17 @@
+{
+  "slug": "exp-circleci-orbs",
+  "namespace": "jrbeverly",
+  "status": "archived",
+  "icon": "icon.svg",
+  "license": {
+    "type": "MIT",
+    "content": "Jonathan Beverly <jrbeverly>"
+  },
+  "topics": [
+    "circleci",
+    "circleci-orbs"
+  ],
+  "languages": [
+    "Dockerfile"
+  ]
+}
