@@ -1,0 +1,15 @@
+slug: exp-circleci-orbs
+description: Experimenting with CircleCI Orbs for running types of workflows
+project: workbench
+namespace:
+status: archived
+icon: icon.svg
+license:
+  type: MIT
+  content: Jonathan Beverly <jrbeverly>
+  year: 2019
+topics: |-
+  [
+    "circleci",
+    "circleci-orbs"
+  ]
