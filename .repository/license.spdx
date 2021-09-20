@@ -1,0 +1,8 @@
+SPDXVersion: SPDX-2.0
+DataLicense: MIT
+Creator: Jonathan R. Beverly
+Created: 2019
+PackageName: jrbeverly/exp-circleci-orbs
+PackageOriginator: Jonathan R. Beverly
+PackageHomePage: https://github.com/jrbeverly/exp-circleci-orbs
+PackageLicenseDeclared: MIT
